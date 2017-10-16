@@ -1,5 +1,7 @@
 from flask import Flask
 from os import environ
+# import urlparse, urllib
+#do i need a url parser?
 
 app = Flask(__name__)
 
@@ -25,12 +27,12 @@ app = Flask(__name__)
 #             <img src="http://placekitten.com/g/200/300">
 #     """
 #     return html.format(name.title())
-    
-def hello_jedi(lastname,firstname):
-    url = 'https://nn-hello-flask-niconguyen.c9users.io/<firstname>/<lastname>'
-    if url.endswith('/<lastname>/<firstname>'):
-        url = lastname[0:3], firstname[0:2] 
-    return "Hello, {}"
+# class Indexer:   
+def __getitem__(self, url):
+    url = 'https://nn-hello-flask-niconguyen.c9users.io/jedi/<firstname>/<lastname>'
+    if url.endswith('/jedi/<lastname>/<firstname>'):
+        print ('jedi "<lastname>[0:3]","<firstname>[0:2]"') 
+
     
 if __name__ == "__main__":
     app.run(host=environ['IP'],
